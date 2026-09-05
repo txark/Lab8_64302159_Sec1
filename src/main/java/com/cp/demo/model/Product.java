@@ -33,8 +33,9 @@ public class Product {
 
     // เพิ่ม Method สำหรับคำนวณราคาสุทธิเพื่อให้ Thymeleaf เรียกใช้งานได้ทันที
     public Double getDiscountedPrice() {
-        if (price == null)
+        if (price == null) {
             return 0.0;
+        }
         if ("MEMBER".equals(discountType)) {
             return price * 0.9; // ลด 10%
         } else if ("SEASONAL".equals(discountType)) {
